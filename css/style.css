@@ -108,17 +108,18 @@ section{
     position: relative;
 }
 .hero-right{
-    height: 50vh;
+    height: 45vh;
     width: 100%;
     display: grid;
     place-items: center;
 }
 .hero-img{
     width: auto;
-    height: 50vh; 
-    border-radius: 20px;
+    height: 45vh; 
+    border-radius: 50%;
     z-index: -3;
     position: relative;
+    transform: translateY(-50px);
 }
 .cursor-over-img{
     transform: scale(7);
@@ -277,6 +278,8 @@ footer{
     }
     .hero-img{
         height: 80vh;
+        border-radius: 30px;
+        transform: translateY(0);
     }
     .hero-button{
         width: 20rem;
