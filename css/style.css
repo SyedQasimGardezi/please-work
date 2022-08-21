@@ -40,6 +40,11 @@ body{
     background-color: var(--primary);
     transform: scale(4);
 }
+.container{
+    height: 30vh;
+    display: grid;
+    place-items:center ;
+}
 header{
     display: flex;
     justify-content: space-between;
@@ -53,6 +58,7 @@ header{
     display: inline-block;
     width: max-content;
     font-size: var(--heading);  
+    z-index: 1999;
 }
 .logo-bg{
     position: absolute;
@@ -60,7 +66,7 @@ header{
     right: 95%;
     width: 10%;
     height: 10%;
-    z-index: -1;
+    /* z-index: -1; */
 }
 .header-links{
     height: auto;
@@ -82,6 +88,9 @@ header{
     border-bottom: 1px black solid;
     transition: all 1s;
 }
+a{
+    text-decoration: none;
+}
 .links:active{
     background-color: var(--primary);
     color: white;
@@ -94,7 +103,7 @@ header{
 }
 
 section{
-    min-height: 100vh;
+    min-height: 75vh;
     display: grid;
     position: relative;
 }
@@ -151,7 +160,7 @@ section{
 .hero-button:hover::after{
     clip-path: circle(70.5% at 50% 50%);
 }
-.hero-prank{
+.hero-prank,.bottom-prank{
     display: none;
 }
 .card{
@@ -165,12 +174,12 @@ section{
     display: flex;
     place-items: center;
     justify-content: center;
-    background-color: gray;
+    background-color: var(--primaryOpac);
     z-index: -10;
 }
 .card-clip-text{
-    background-color: rgb(55, 55, 255);
-    width: 100%;
+    background-color: var(--primaryOpac);
+    width: 70vw;
     height: 35vh;
     display: grid;
     place-items: center;
@@ -178,20 +187,66 @@ section{
     color: white;
     padding-inline: 0.5em;
     clip-path: circle(71.1% at 50% 50%);
-    transform: translateY(100px);
+    transform: translateY(70px);
 }
 .card-img{
     position: absolute;
     width: 200px;
     height: 200px;
-    background-image: url(../content/qasim.jpg);
     background-size: cover;
     background-position:top center;
     border-radius: 50%;
     position: absolute;
-    top: 20%;
+    top: 10%;
     display: flex;
     justify-content: center;
+    border: white 2px solid;
+}
+.card-clip-name{
+    display: none;
+}
+.Qasim{
+    background-image: url(../content/qasim.jpg);
+    background-position: center;
+}
+.Ahmed{
+    background-image: url(../content/ahmed.jpg);
+    background-position: center;
+}
+.Waseef{
+    background-image: url(../content/waseef.jpg);
+    background-position: center;
+
+}
+.Hamza{
+    background-image: url(../content/hamzaafzal.jpg);
+    background-position: center;
+
+}
+.Bhutta{
+    background-image: url(../content/Bhutta.jpg);
+    background-position: center;
+
+}
+.Ahsan{
+    background-image: url(../content/Ahsan.jpg);
+    background-position: center;
+
+}
+.Asad{
+    background-image: url(../content/Asad.jpg);
+    background-position: center;
+}
+.test-prank{
+    display: none;
+}
+footer{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:1em 1.5em;
+    border-top: 1px var(--primary) solid;
 }
 @media screen and (hover:none) {
     .cursor{
@@ -203,6 +258,9 @@ section{
         display: flex;
     }
     header{
+        padding:0.5em 1.5em;
+    }
+    footer{
         padding:0.5em 1.5em;
     }
     .logo-bg{
@@ -231,6 +289,9 @@ section{
         bottom: 0%;
         mix-blend-mode: color-burn;
         transition: all 0.1s;
+    }
+    .bottom-prank{
+        color: white;
     }
     .cursor-over-prank{
         transform: scale(4);
@@ -275,9 +336,9 @@ section{
         z-index: 0;
     }
     .card-clip-text{
-        background-color: rgb(55, 55, 255);
-        width: 100%;
-        height: 35vh;
+        background-color: var(--primary);
+        width: 30vw;
+        height: 40vh;
         display: grid;
         place-items: center;
         border-radius: 20px;
@@ -285,13 +346,18 @@ section{
         transform: translate(65%);
         clip-path: circle(51.1% at 50% 50%);
         transition: all 0.5s;
-        z-index: 1;
+        z-index: 999;
+    }
+    .card-clip-name{
+        display: block;
+        position: absolute;
+        color: white;
+        right: 20%;
     }
     .card-img{
         position: absolute;
-        width: 25%;
-        height: 45vh;
-        background-image: url(../content/qasim.jpg);
+        width: 20vw;
+        height: 50vh;
         background-size: cover;
         background-position:top center;
         border-radius: 30px;
@@ -299,16 +365,50 @@ section{
         right: 10%;
         top: auto;
         transition: all 0.5s;
+        border: none;
     }
     .card:hover .card-img{
         width: 40%;
-        height: 60vh;
+        height: 65vh;
     }
     .card:hover .card-clip-text{
         clip-path: circle(71.1% at 50% 50%);
         transform: translate(-45%);
-        
         padding-inline: 2em;
         color:white;
+    }
+    .card:hover .card-clip-name{
+        display: none;
+    }
+    .test-prank{
+        display: block;
+        font-size: 5rem;
+        
+        height: auto;
+        font-weight: bold;
+        position: absolute;
+        
+        writing-mode: vertical-rl;
+        color: black;
+    }
+    .motherfucker{
+        top: 200%;
+        left: 5%;
+    }
+    .ahmed-crack{
+        right: 0%;
+        top: 110%;
+    }
+    .pendu{
+        writing-mode: horizontal-tb;
+        top: 510%;
+        font-size: 3rem;
+        left: 30%;
+    }
+    .cheeku{
+        top: 340%;
+        right:0%;
+        font-size: 0.8em;
+        z-index: 2;
     }
 }
