@@ -411,6 +411,12 @@ footer{
         top: 340%;
         right:0%;
         font-size: 0.8em;
-        z-index: 2;
+        /* color: white; */
     }
+    .hamza-like-men{
+        top: 150vh;
+        left:10%;
+        /* color: white; */
+        font-size: 2em;
+        transform: rotateY(20deg);
 }
