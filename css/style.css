@@ -44,7 +44,9 @@ body{
     height: 30vh;
     display: grid;
     place-items:center ;
+    text-align: center;    
 }
+
 header{
     display: flex;
     justify-content: space-between;
@@ -52,6 +54,11 @@ header{
     width: 100%;
     font-size: var(--heading);
     padding:1em 1.5em;
+    position: absolute;
+    background-color: transparent;
+}
+.after-header{
+    padding-top: 1em;
 }
 .logo{
     flex:1;
@@ -77,6 +84,9 @@ header{
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
+    background-color: white;
+    position: static;
+    z-index: 9999999;
 }
 .links{
     display: grid;
@@ -91,7 +101,6 @@ a{
     text-decoration: none;
 }
 .links:active{
-    /* background-color: var(--primary); */
     color: white;
 }
 .header-links-x{
@@ -99,6 +108,7 @@ a{
 }
 .hamburger{
     display: inline-block;
+    z-index: 9999999;
 }
 
 section{
@@ -219,8 +229,8 @@ section{
 
 }
 .Hamza{
-    background-image: url(../content/hamzaafzal.jpg);
-    background-position: center;
+    background-image: url(../content/Hamza.jpg);
+    background-position: top;
 
 }
 .Bhutta{
@@ -240,13 +250,71 @@ section{
 .test-prank{
     display: none;
 }
+.pp-svg-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.pp-heading{
+    position: absolute;
+    top: 70%;    
+}
+#pp,#balls{
+    transition: all 0.5s;
+}
+.fuck{
+    transition: all 0.1s;
+    transform: scaleY(1.2);
+    animation: wiggle 0.5s linear alternate infinite;
+}
+@keyframes wiggle{
+    from{
+        transform: rotateX(45deg);
+        transform-origin: top;
+    }
+    to{
+        transform: rotateX(-45deg);
+    }
+}
+.pp-svg:hover #pp{
+    transform: scaleY(1.2);
+    transform-origin: top;
+}
+.pp-svg:hover #balls{
+    transform: scale(0.9);
+    transform-origin: top;
+}
+.pp-info{
+    background-color: var(--primary);
+    padding: 1em 1.5em;
+    border-radius: 30px;
+    border: white 2px solid;
+    text-align: center;
+    width: 75%;    
+}
+
+.pp-info-marker{
+    display: none;
+}
 footer{
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding:1em 1.5em;
-    border-top: 1px var(--primary) solid;
+    background-image:linear-gradient(rgba(238, 130, 238, 0),rgba(238, 130, 238, 0.5)) ;
+}
+.scroller{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    display: block;
+}
+.children{
+    scroll-snap-align: start;
+    height: 100vh;
 }
 @media screen and (hover:none) {
     .cursor{
@@ -259,6 +327,10 @@ footer{
     }
     header{
         padding:0.5em 1.5em;
+        z-index: 9999;
+    }
+    .after-header{
+        padding-top: 5em;
     }
     footer{
         padding:0.5em 1.5em;
@@ -420,4 +492,36 @@ footer{
         font-size: 2em;
         transform: rotateY(20deg);
     }
+    .pp-hard{
+        display: none;
+    }
+    .pp-action{
+        display: none;
+    }
+    .pp-info{
+        clip-path: circle(25% at 50% 50%);
+        transition: all 0.2s;
+        width: auto;
+    }
+    .pp-info:hover{
+        clip-path: circle(70.5% at 50% 50%);
+    }
+    .pp-info-marker{
+        display: block;        
+    }
+    .pp-info:hover .pp-info-marker{
+        display: none;
+    }
+    .pp-info-actual{
+        display: none;
+    }
+    .pp-info:hover .pp-info-actual{
+        display: inline-block;
+    }
+    .pp-heading{
+        left: 5%;
+        top: 60%;
+        font-size: var(--heading);
+    }
+
 }
