@@ -73,7 +73,7 @@ header{
     right: 95%;
     width: 10%;
     height: 10%;
-    /* z-index: -1; */
+    z-index: 1998;
 }
 .header-links{
     height: auto;
