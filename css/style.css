@@ -1,73 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
-:root{
-    --xl : clamp(1rem,4vw,3rem);
-    --heading : clamp(0.8rem,3vw,2.5rem);
-    --p : clamp(0.7rem,4vw,1.5rem);
+
+:root {
+    --xl: clamp(1rem, 4vw, 3rem);
+    --heading: clamp(0.8rem, 3vw, 2.5rem);
+    --p: clamp(0.7rem, 4vw, 1.5rem);
     --primary: violet;
     --primaryOpac: rgba(238, 130, 238, 0.5);
 }
-h1{
+
+h1 {
     font-family: 'Montserrat', sans-serif;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     cursor: none;
 }
-body{
+
+body {
     min-height: 100vh;
     background-color: black;
     color: white;
     overflow-x: hidden;
-    width: 100vw;   
+    width: 100vw;
     font-family: 'Roboto Condensed', sans-serif;
 }
-.cursor{
+
+.cursor {
     position: absolute;
     width: 25px;
     height: 25px;
     border: 0.1px var(--primary) solid;
     border-radius: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     transition: all 0.2s ease;
     transition-property: background-color, transform;
     z-index: -1;
     backdrop-filter: grayscale();
 }
-.cursor-over-nav{
+
+.cursor-over-nav {
     background-color: var(--primary);
     transform: scale(4);
 }
-.container{
+
+.container {
     height: 30vh;
     display: grid;
-    place-items:center ;
-    text-align: center;    
+    place-items: center;
+    text-align: center;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     min-height: 10vh;
     width: 100%;
     font-size: var(--heading);
-    padding:1em 1.5em;
+    padding: 1em 1.5em;
     position: absolute;
     background-color: transparent;
 }
-.after-header{
-    padding-top: 1em;
+
+.after-header {
+    padding-top: 5em;
 }
-.logo{
-    flex:1;
+
+.logo {
+    flex: 1;
     display: inline-block;
     width: max-content;
-    font-size: var(--heading);  
+    font-size: var(--heading);
     z-index: 1999;
 }
-.logo-bg{
+
+.logo-bg {
     position: absolute;
     bottom: 95%;
     right: 95%;
@@ -75,7 +85,8 @@ header{
     height: 10%;
     z-index: 1998;
 }
-.header-links{
+
+.header-links {
     height: auto;
     position: absolute;
     top: 5%;
@@ -88,7 +99,8 @@ header{
     position: static;
     z-index: 9999999;
 }
-.links{
+
+.links {
     display: grid;
     place-items: center;
     color: black;
@@ -97,43 +109,51 @@ header{
     border-bottom: 1px black solid;
     transition: all 1s;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.links:active{
+
+.links:active {
     color: white;
 }
-.header-links-x{
+
+.header-links-x {
     display: none;
 }
-.hamburger{
+
+.hamburger {
     display: inline-block;
     z-index: 9999999;
 }
 
-section{
+section {
     min-height: 75vh;
     display: grid;
     position: relative;
 }
-.hero-right{
+
+.hero-right {
     height: 45vh;
     width: 100%;
     display: grid;
     place-items: center;
 }
-.hero-img{
+
+.hero-img {
     width: auto;
-    height: 45vh; 
+    height: 45vh;
     border-radius: 50%;
-    z-index: -3;
+    z-index: -2;
     position: relative;
     transform: translateY(-50px);
 }
-.cursor-over-img{
+
+.cursor-over-img {
     transform: scale(7);
 }
-.hero-left{
+
+.hero-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -142,13 +162,16 @@ section{
     text-align: center;
     height: 50vh;
 }
-.hero-left h1{
+
+.hero-left h1 {
     font-size: var(--xl);
 }
-.hero-left p{
+
+.hero-left p {
     font-size: var(--p);
 }
-.hero-button{
+
+.hero-button {
     padding: 1em;
     border: white 2px solid;
     background-color: transparent;
@@ -156,7 +179,8 @@ section{
     width: 15rem;
     position: relative;
 }
-.hero-button::after{
+
+.hero-button::after {
     content: '';
     position: absolute;
     height: 100%;
@@ -167,27 +191,32 @@ section{
     clip-path: circle(0% at 50% 50%);
     transition: all 0.5s ease;
 }
-.hero-button:hover::after{
+
+.hero-button:hover::after {
     clip-path: circle(70.5% at 50% 50%);
 }
-.hero-prank,.bottom-prank{
+
+.hero-prank,
+.bottom-prank {
     display: none;
 }
-.card{
+
+.card {
     height: 70vh;
     width: 85%;
     position: absolute;
     border-radius: 30px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     display: flex;
     place-items: center;
     justify-content: center;
     background-color: var(--primaryOpac);
     z-index: -10;
 }
-.card-clip-text{
+
+.card-clip-text {
     background-color: var(--primaryOpac);
     width: 70vw;
     height: 35vh;
@@ -199,12 +228,13 @@ section{
     clip-path: circle(71.1% at 50% 50%);
     transform: translateY(70px);
 }
-.card-img{
+
+.card-img {
     position: absolute;
     width: 200px;
     height: 200px;
     background-size: cover;
-    background-position:top center;
+    background-position: top center;
     border-radius: 50%;
     position: absolute;
     top: 10%;
@@ -212,150 +242,242 @@ section{
     justify-content: center;
     border: white 2px solid;
 }
-.card-clip-name{
+
+.card-clip-name {
     display: none;
 }
-.Qasim{
+
+.Qasim {
     background-image: url(../content/qasim.jpg);
     background-position: center;
 }
-.Ahmed{
+
+.Ahmed {
     background-image: url(../content/ahmed.jpg);
     background-position: center;
 }
-.Waseef{
+
+.Waseef {
     background-image: url(../content/waseef.jpg);
     background-position: center;
 
 }
-.Hamza{
+
+.Hamza {
     background-image: url(../content/Hamza.jpg);
     background-position: top;
 
 }
-.Bhutta{
+
+.Bhutta {
     background-image: url(../content/Bhutta.jpg);
     background-position: center;
 
 }
-.Ahsan{
+
+.Ahsan {
     background-image: url(../content/Ahsan.jpg);
     background-position: center;
 
 }
-.Asad{
+
+.Asad {
     background-image: url(../content/Asad.jpg);
     background-position: center;
 }
-.test-prank{
+
+.test-prank {
     display: none;
 }
-.pp-svg-div{
+
+.pp-svg-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     width: 100%;
 }
-.pp-heading{
+
+.pp-heading {
     position: absolute;
-    top: 70%;    
+    top: 20%;
+    right: 10%;
+    writing-mode: vertical-lr;
 }
-#pp,#balls{
+
+#pp,
+#balls {
     transition: all 0.5s;
 }
-.fuck{
+
+.fuck {
     transition: all 0.1s;
     transform: scaleY(1.2);
     animation: wiggle 0.5s linear alternate infinite;
 }
-@keyframes wiggle{
-    from{
+
+@keyframes wiggle {
+    from {
         transform: rotateX(45deg);
         transform-origin: top;
     }
-    to{
+
+    to {
         transform: rotateX(-45deg);
     }
 }
-.pp-svg:hover #pp{
+
+.pp-svg:hover #pp {
     transform: scaleY(1.2);
     transform-origin: top;
 }
-.pp-svg:hover #balls{
+
+.pp-svg:hover #balls {
     transform: scale(0.9);
     transform-origin: top;
 }
-.pp-info{
+
+.pp-info {
     background-color: var(--primary);
     padding: 1em 1.5em;
     border-radius: 30px;
     border: white 2px solid;
     text-align: center;
-    width: 75%;    
+    width: 75%;
 }
 
-.pp-info-marker{
+.pp-info-marker {
     display: none;
 }
-footer{
+
+footer {
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:1em 1.5em;
-    background-image:linear-gradient(rgba(238, 130, 238, 0),rgba(238, 130, 238, 0.5)) ;
+    padding: 1em 1.5em;
+    background-image: linear-gradient(rgba(238, 130, 238, 0), rgba(238, 130, 238, 0.5));
 }
-.scroller{
+
+.scroller {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
     display: block;
 }
-.children{
+
+.children {
     scroll-snap-align: start;
     height: 100vh;
 }
+
+.history{
+    display: grid;
+    grid-template-columns: auto auto ;
+}
+.history>*{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.history2 {
+    background-color: black;
+}
+
 @media screen and (hover:none) {
-    .cursor{
-        display:none
+    .cursor {
+        display: none
+    }
+    .grid-big>p{
+        background-color: rgba(255, 255, 255, 0.204);
+    }
+    .grid1{
+        background-image: url(../content/qasim.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .grid2{
+        background-image: url(../content/ahmed.jpg);
+        background-position: top;
+        background-size: cover;
+    }
+    .grid3{
+        background-image: url(../content/Hamza.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .grid4{
+        background-image: url(../content/Ahsan.jpg);
+        background-position: right;
+        background-size: cover;
+    }
+    .grid5{
+        background-image: url(../content/Asad.jpg);
+        background-position: top;
+        background-size: cover;
+    }
+    .grid6{
+        background-image: url(../content/Bhutta.jpg);
+        background-position: top;
+        background-size: cover;
+    }
+    .grid7{
+        background-image: url(../content/waseef.jpg);
+        background-position: center;
+        background-size: cover;
     }
 }
+
 @media screen and (min-width:786px) {
-    section{
+    section {
         display: flex;
     }
-    header{
-        padding:0.5em 1.5em;
+
+    header {
+        padding: 0.5em 1.5em;
         z-index: 9999;
     }
-    .after-header{
+
+    .after-header {
         padding-top: 5em;
     }
-    footer{
-        padding:0.5em 1.5em;
+
+    footer {
+        padding: 0.5em 1.5em;
     }
-    .logo-bg{
+
+    .logo-bg {
         top: 0;
         left: 6%;
     }
-    .hero-right{
+
+    .hero-right {
         flex-basis: 100%;
         height: 100vh;
     }
-    .hero-left{
+
+    .hero-left {
         flex-basis: 100%;
         height: 100vh;
     }
-    .hero-img{
+
+    .hero-img {
         height: 80vh;
         border-radius: 30px;
         transform: translateY(0);
     }
-    .hero-button{
+
+    .hero-button {
         width: 20rem;
     }
-    .hero-prank{
+
+    .hero-prank {
         display: block;
         color: black;
         padding: 0.5em;
@@ -364,15 +486,18 @@ footer{
         mix-blend-mode: color-burn;
         transition: all 0.1s;
     }
-    .bottom-prank{
+
+    .bottom-prank {
         color: white;
     }
-    .cursor-over-prank{
+
+    .cursor-over-prank {
         transform: scale(4);
         background-color: var(--primary);
     }
-    .header-links{
-        flex:1;
+
+    .header-links {
+        flex: 1;
         display: flex;
         flex-direction: row;
         list-style: none;
@@ -382,34 +507,39 @@ footer{
         height: 10vh;
         background-color: transparent;
     }
-    .links{
+
+    .links {
         transition: all 0.3s;
         letter-spacing: 0.1px;
         height: 10vh;
         color: white;
         border: none;
     }
-    .links:hover{
+
+    .links:hover {
         color: white;
         z-index: 1;
     }
-    .hamburger{
+
+    .hamburger {
         display: none;
     }
-    .card{
+
+    .card {
         height: 70vh;
         width: 50%;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         display: flex;
         place-items: center;
         justify-content: center;
         background-color: transparent;
         z-index: 0;
     }
-    .card-clip-text{
+
+    .card-clip-text {
         background-color: var(--primary);
         width: 30vw;
         height: 40vh;
@@ -422,18 +552,20 @@ footer{
         transition: all 0.5s;
         z-index: 999;
     }
-    .card-clip-name{
+
+    .card-clip-name {
         display: block;
         position: absolute;
         color: white;
         right: 20%;
     }
-    .card-img{
+
+    .card-img {
         position: absolute;
         width: 20vw;
         height: 50vh;
         background-size: cover;
-        background-position:top center;
+        background-position: top center;
         border-radius: 30px;
         position: absolute;
         right: 10%;
@@ -441,87 +573,229 @@ footer{
         transition: all 0.5s;
         border: none;
     }
-    .card:hover .card-img{
+
+    .card:hover .card-img {
         width: 40%;
         height: 65vh;
     }
-    .card:hover .card-clip-text{
+
+    .card:hover .card-clip-text {
         clip-path: circle(71.1% at 50% 50%);
         transform: translate(-45%);
         padding-inline: 2em;
-        color:white;
+        color: white;
     }
-    .card:hover .card-clip-name{
+
+    .card:hover .card-clip-name {
         display: none;
     }
-    .test-prank{
+
+    .test-prank {
         display: block;
         font-size: 5rem;
-        
+
         height: auto;
         font-weight: bold;
         position: absolute;
-        
+
         writing-mode: vertical-rl;
         color: black;
     }
-    .motherfucker{
+
+    .motherfucker {
         top: 200%;
         left: 5%;
     }
-    .ahmed-crack{
+
+    .ahmed-crack {
         right: 0%;
         top: 110%;
     }
-    .pendu{
+
+    .pendu {
         writing-mode: horizontal-tb;
         top: 510%;
         font-size: 3rem;
         left: 30%;
     }
-    .cheeku{
+
+    .cheeku {
         top: 340%;
-        right:0%;
+        right: 0%;
         font-size: 0.8em;
-        /* color: white; */
     }
-    .hamza-like-men{
+
+    .hamza-like-men {
         top: 150vh;
-        left:10%;
-        /* color: white; */
+        left: 10%;
         font-size: 2em;
         transform: rotateY(20deg);
     }
-    .pp-hard{
+
+    .pp-hard {
         display: none;
     }
-    .pp-action{
+
+    .pp-action {
         display: none;
     }
-    .pp-info{
+
+    .pp-info {
         clip-path: circle(25% at 50% 50%);
         transition: all 0.2s;
         width: auto;
     }
-    .pp-info:hover{
+
+    .pp-info:hover {
         clip-path: circle(70.5% at 50% 50%);
     }
-    .pp-info-marker{
-        display: block;        
+
+    .pp-info-marker {
+        display: block;
     }
-    .pp-info:hover .pp-info-marker{
+
+    .pp-info:hover .pp-info-marker {
         display: none;
     }
-    .pp-info-actual{
+
+    .pp-info-actual {
         display: none;
     }
-    .pp-info:hover .pp-info-actual{
+
+    .pp-info:hover .pp-info-actual {
         display: inline-block;
     }
-    .pp-heading{
+
+    .pp-heading {
         left: 5%;
         top: 60%;
         font-size: var(--heading);
+        writing-mode: horizontal-tb;
     }
 
+    .history {
+        display: flex;
+    }
+
+    .history>* {
+        width: 100%;
+        height: 100vh; /* might wanna change later */
+        flex-basis: 100%;
+        transition: all 0.5s;
+        filter: brightness(10%);
+        justify-content: center;
+        font-size: 1rem;
+        row-gap: 2rem;
+        margin-top:-5rem;  /* might wanna change later */
+    }
+    .grid-big{
+        transition: all 0.5s;
+    }
+    .grid-big p{
+        display: none;
+        background-color: rgba(0, 0, 0, 0.105);
+        transition: all 0.1s;
+        font-size: 1.5rem;
+    }
+    .grid-big:hover p{
+        display: block;
+    }
+    .grid-big h1{
+        display: inline-block;
+        transition: all 0.1s;
+    }
+    .grid-big:hover h1{
+        display: none;
+    }
+
+    .grid-big:hover {
+        flex-basis: 150%;
+        filter: brightness(100%);
+    }
+
+    .grid1 {
+        background-color: blueviolet;
+    }
+
+    .grid1:hover {
+        background-color: transparent;
+        background-image: url(../content/qasim.jpg);
+        background-position: 25%;
+        background-size: cover;
+    }
+
+    .grid2 {
+        background-color: red;
+    }
+
+    .grid2:hover {
+        background-color: transparent;
+        background-image: url(../content/ahmed.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .grid3 {
+        background-color: orange;
+    }
+
+    .grid3:hover {
+        background-color: transparent;
+        background-image: url(../content/Hamza.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .grid4 {
+        background-color: yellowgreen;
+    }
+
+    .grid4:hover {
+        background-color: transparent;
+        background-image: url(../content/Ahsan.jpg);
+        background-position: 85%;
+        background-size: cover;
+    }
+
+    .grid5 {
+        background-color: green;
+    }
+
+    .grid5:hover {
+        background-color: transparent;
+        background-image: url(../content/Asad.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .grid6 {
+        background-color: purple;
+    }
+
+    .grid6:hover {
+        background-color: transparent;
+        background-image: url(../content/Bhutta.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .grid7 {
+        background-color: brown;
+    }
+
+    .grid7:hover {
+        background-color: transparent;
+        background-image: url(../content/waseef.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .history2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 10rem;
+        font-weight: bold;
+        text-shadow: 2px 2px black;
+    }
 }
