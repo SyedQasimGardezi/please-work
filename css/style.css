@@ -63,6 +63,7 @@ header {
     padding: 1em 1.5em;
     position: absolute;
     background-color: transparent;
+    z-index: 1;
 }
 
 .after-header {
@@ -387,7 +388,7 @@ footer {
 }
 
 .history2 {
-    background-color: black;
+    background-color: transparent;
 }
 
 @media screen and (hover:none) {
